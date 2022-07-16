@@ -1,0 +1,33 @@
+
+<?php
+/** @var \Attribute\Extention\Block\Display $block*/
+?>
+
+
+<div style="display: flex; justify-content: space-around; cursor: pointer; text-decoration: none; font-size: 35px;">
+    <p>
+    <table style="width:100%">
+        <tr>
+            <th>Email</th>
+            <th> Firstname</th>
+            <th>Lastname</th>
+            <th>Edit</th>
+        </tr>
+        <?php $datas = $block->display();?>
+        <?php foreach ($datas as $data) { ?>
+            <tr>
+                <td><?php echo $data->getEmail();?></td>
+                <td><?php echo $data->getFirstname();?></td>
+                <td><?php echo $data->getLastname();?></td>
+                <td><a href="<?php echo $this->getUrl('disdata/index/edit') . '?id=' . $data->getId(); ?>" class="action primary">Edit</a></td>
+            </tr>
+        <?php }?>
+    </table>
+    </p>
+</div>
+
+<style>
+    table, th, td {
+        border:1px solid black;
+    }
+</style>

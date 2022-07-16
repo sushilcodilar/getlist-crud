@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+<route method="GET" url="/V1/cu/cu/:customerId">
+    <service class="Attribute\Extention\Api\CustomerRepositoryInterface" method="getById"/>
+    <resources>
+        <resource ref="anonymous"/>
+    </resources>
+</route>
+
+    <route method="GET" url="/V1/a/a/:addressId">
+        <service class="Attribute\Extention\Api\AddressRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+<!--    <route method="GET" url="/V1/g/g/:Id">-->
+<!--        <service class="Attribute\Extention\Api\AddressRepositoryInterface" method="getAddressData"/>-->
+<!--        <resources>-->
+<!--            <resource ref="anonymous"/>-->
+<!--        </resources>-->
+<!--    </route>-->
+
+</routes>

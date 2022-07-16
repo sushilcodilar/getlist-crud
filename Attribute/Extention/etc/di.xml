@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+   <preference for="Attribute\Extention\Api\AddressRepositoryInterface" type="Attribute\Extention\Model\AddressRepository" />
+    <preference for="Attribute\Extention\Api\CustomerRepositoryInterface" type="Attribute\Extention\Model\CustomerRepository" />
+
+    <preference for="Attribute\Extention\Api\Data\CustomerInterface" type="Attribute\Extention\Model\Customer" />
+   <preference for="Attribute\Extention\Api\Data\AddressInterface" type="Attribute\Extention\Model\Address" />
+
+    <preference for="Attribute\Extention\Api\Data\AddressSearchResultsInterface" type="Attribute\Extention\Model\AddressSearchResults" />
+
+    <preference for="Attribute\Extention\Api\Data\CustomerSearchResultsInterface" type="Attribute\Extention\Model\CustomerSearchResults" />
+
+    <type name="Attribute\Extention\Api\CustomerRepositoryInterface">
+        <plugin name="addresses" type="Attribute\Extention\Plugin\Address"/>
+    </type>
+
+    <type name="Attribute\Extention\Api\AddressRepositoryInterface">
+        <plugin name="customers" type="Attribute\Extention\Plugin\Customer"/>
+    </type>
+
+</config>
